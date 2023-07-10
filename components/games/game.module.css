@@ -3,54 +3,56 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
+    width: 250px;
     margin: 100px auto;
     padding: 20px;
     border: 1px solid black;
-  }
+    border-radius: 10px;
+    box-sizing: border-box;
+}
 
-  .game-info {
+.game-info {
     margin-bottom: 10px;
-  }
+}
 
-  .game-field {
+.game-field {
     display: grid;
-    grid-template-columns: repeat(3, 30px);
-    grid-template-rows: repeat(3, 30px);
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
     padding: 1px 0 0 1px;
-  }
+}
 
-  .cell {
+.cell {
     border: 1px solid grey;
     margin: -1px 0 0 -1px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: transparent;
-  }
+}
 
-  .cell--win {
+.cell--win {
     background: rgba(255, 0, 0, 0.1);
-  }
+}
 
-  .symbol {
+.symbol {
     font-size: 20px;
     line-height: 24px;
-  }
+}
 
-  .symbol--x {
+.symbol--x {
     color: red;
-  }
+}
 
-  .symbol--o {
+.symbol--o {
     color: green;
-  }
+}
 
-  .reset {
+.reset {
     cursor: pointer;
     margin-top: 10px;
     background-color: transparent;
     border: 1px solid gray;
     padding: 4px 12px;
     border-radius: 4px;
-  }
+}

@@ -1,4 +1,4 @@
-import { SYMBOL_O, SYMBOL_X } from '../games/constsnts';
+import { SYMBOL_O, SYMBOL_X } from './constsnts';
 import styles from '../games/game.module.css'
 
 export function GameSymbol({ symbol }) {

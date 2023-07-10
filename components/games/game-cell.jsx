@@ -1,4 +1,4 @@
-import { GameSymbol } from '../games/game-symbol'
+import { GameSymbol } from './game-symbol'
 import styles from '../games/game.module.css'
 
 export function GameCell({ isWinner, onClick, symbol }) {

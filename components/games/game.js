@@ -1,7 +1,7 @@
-import { GameCell } from '../games/game-cell'
-import { GameInfo } from '../games/game-info'
+import { GameCell } from './game-cell'
+import { GameInfo } from './game-info'
 import styles from '../games/game.module.css'
-import { useGameState } from '../games/use-game-state';
+import { useGameState } from './use-game-state';
 
 
 export function Game() {
