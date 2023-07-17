@@ -34,6 +34,14 @@ export function computerWinner(cells,sequenceSize = 5, fieldsSize = 19) {
             res[2].push(-fieldsSize * (j - gap) + (j - gap) + i)
             res[3].push(fieldsSize * (j - gap) + i)
         }
+
+        const  x = i % fieldsSize
+        if(x < gap || x >= fieldsSize - gap)  {
+            res.shift();
+            res.shift();
+            res.shift();
+        }
+
         return res
     }
 
