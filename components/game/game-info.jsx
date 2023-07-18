@@ -41,7 +41,7 @@ const players = [
     }
 ]
 
-export function GameInfo({className, playersCount, currentMove, isWinner}) {
+export function GameInfo({className, playersCount, currentMove, isWinner, onPlayerTimeOver}) {
     return (
         <div
             className={clsx(className, "grid grid-cols-2 gap-3 justify-between bg-white rounded-2xl shadow-md px-8 py-4")}>
@@ -50,6 +50,8 @@ export function GameInfo({className, playersCount, currentMove, isWinner}) {
                     key={player.id}
                     playerInfo={player}
                     isRight={index % 2 === 1}
+
+                    onTimeOver={() => {onPlayerTimeOver(player.symbol)}}
                     isTimerRunning={currentMove === player.symbol && !isWinner}
                 />
             )}
@@ -57,7 +59,7 @@ export function GameInfo({className, playersCount, currentMove, isWinner}) {
     )
 }
 
-function PlayerInfo({playerInfo, isRight, isTimerRunning}) {
+function PlayerInfo({playerInfo, isRight, isTimerRunning, onTimeOver}) {
 
     const [seconds, setSeconds] = useState(60)
 
@@ -78,6 +80,12 @@ function PlayerInfo({playerInfo, isRight, isTimerRunning}) {
             }
         }
     }, [isTimerRunning])
+
+    useEffect(() => {
+        if(seconds === 0) {
+            onTimeOver()
+        }
+    }, [seconds])
 
     const getTimerColor = () => {
         if(isTimerRunning) {
