@@ -28,7 +28,7 @@ export default function HomePage() {
                         <GameSymbol symbol={winnerSymbol}/>
                     </div>
                 )}
-                <UiModal width="md">
+                <UiModal width="md" isOpen={winnerSymbol} onClose={() => console.log("close")}>
                     <UiModal.Header>Game over</UiModal.Header>
                     <UiModal.Body>
                         <div className="text-sm  ">Winner: <span className="text-teal-600">Player One</span></div>
