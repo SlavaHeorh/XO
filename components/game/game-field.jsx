@@ -29,7 +29,8 @@ export function GameField({
                         key={index}
                         isWinner={winnerSequence?.includes(index)}
                         disabled={!!winnerSymbol}
-                        onClick={() => {handleCellClick(index)}}
+                        onClick={() => {handleCellClick(index)
+                        }}
                     >
                         {symbol && <GameSymbol symbol={symbol} className="w-5 h-5"/>}
                     </GameCell>

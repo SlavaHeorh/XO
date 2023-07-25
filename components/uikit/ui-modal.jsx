@@ -23,9 +23,9 @@ export function UiModal({width = "md", className, children, isOpen = false, onCl
         onClose();
     }
 
-    // if(!isOpen) {
-    //     return null;
-    // }
+    if(!isOpen) {
+        return null;
+    }
 
     const modal = (
         <div

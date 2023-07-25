@@ -1,7 +1,7 @@
-import {GAME_SYMBOLS} from "./constants";
+import {GAME_SYMBOLS} from "../constants";
 import {useState} from "react";
-import {computerWinner, getNextMove} from "./model";
-
+import {getNextMove} from "./get-next-move";
+import {computerWinner} from "./computer-winner";
 
 
 export function useGameState(playersCount) {
@@ -16,7 +16,7 @@ export function useGameState(playersCount) {
     const nextMove = getNextMove(currentMove, playersCount, playersTimeOver)
 
 
-    const winnerSymbol = nextMove === currentMove ? currentMove : winnerSequence?.[0]
+    const winnerSymbol = nextMove === currentMove ? currentMove : cells[winnerSequence?.[0]]
 
     const handleCellClick = (index) => {
 
